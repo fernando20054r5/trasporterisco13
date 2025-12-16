@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto Transporte Risco. Cotizaciones y consultas rápidas por WhatsApp.">
+  <title>Contacto - Transporte Risco</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* === HEADER === */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 10px 20px;
+      background: #000000;
+      border-bottom: 4px solid #FF9900;
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+      margin-right: 30px;
+      order: 1;
+    }
+    header nav { order: 2; margin-left: auto; }
+    header h1 img,
+    header .logo {
+      height: 70px;
+      max-height: 80px;
+      display: block;
+      object-fit: contain;
+      width: auto;
+    }
+
+    header nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 5px;
+    }
+
+    header nav a {
+      color: #fff;
+      margin: 8px 12px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    header nav a:hover {
+      color: #FF9900;
+    }
+
+    /* === SECCIÓN CONTACTO === */
+    section {
+      padding: 100px 20px 60px; /* compensa header fijo más delgado */
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+                  url('https://p4.wallpaperbetter.com/wallpaper/316/818/504/semis-freightliner-black-and-white-freightliner-trucks-truck-hd-wallpaper-preview.jpg') 
+                  center/cover no-repeat;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      padding: 18px 45px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.3s;
+      margin: 15px;
+    }
+
+    .btn-whatsapp img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .btn-facebook {
+      background: #1877F2;
+      color: #fff;
+      padding: 18px 45px;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.3s;
+      margin: 15px;
+    }
+
+    .btn-facebook img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .btn-facebook:hover {
+      background: #0a66c2;
+    }
+
+    .btn-whatsapp:hover {
+      background: #20b457;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #ccc;
+    }
+
+    /* === BOTÓN FLOTANTE WHATSAPP === */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+      z-index: 999;
+    }
+
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      header h1 {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      section p {
+        font-size: 1rem;
+      }
+
+      .btn-whatsapp {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section h2 {
+        font-size: 1.8rem;
+      }
+      section p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><img src="imagenes/LOGO7.PNG.jpg" alt="Logo" class="logo"></h1>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="Servicios.html">Servicios</a>
+    <a href="galeria.html">Galería / Proyectos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Contáctanos</h2>
+  <p>Para cotizaciones o consultas específicas escríbenos directamente.</p>
+  <p><strong>Teléfono / WhatsApp: 961 005 923</strong></p>
+  <div style="margin-top: 30px;">
+    <a href="https://wa.me/51961005923" class="btn-whatsapp" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo"> Escríbenos por WhatsApp
+    </a>
+    <a href="https://www.facebook.com/marketplace/item/3186992468138608/?referralSurface=messenger_banner&referralCode=2&locale=es_LA" class="btn-facebook" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook Logo"> Visítanos en Facebook
+    </a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Transporte Risco. Todos los derechos reservados.
+</footer>
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/51961005923" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+</body>
+</html>

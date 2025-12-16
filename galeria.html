@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galería de proyectos de eliminación de desmonte y mudanzas de Trasporte Risco.">
+    <title>Galería de Proyectos - TRASPORTE RISCO</title>
+    <link rel="stylesheet" href="style.css"> 
+    
+    <style>
+        /* CSS ESPECÍFICO DE LA PÁGINA (idealmente, esto también iría en style.css) */
+        
+        /* HEADER - Ajustes */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            background: #000000;
+            border-bottom: 4px solid #FF9900;
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            margin-right: 30px;
+            order: 1;
+        }
+
+        header nav {
+            order: 2;
+            margin-left: auto;
+        }
+
+        header h1 img,
+        header .logo {
+            height: 70px;
+            max-height: 80px;
+            display: block;
+            object-fit: contain;
+            width: auto;
+        }
+
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        header nav a {
+            color: #fff;
+            margin: 8px 12px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #FF9900;
+        }
+
+        /* MAIN SECTION */
+        main {
+            padding-top: 100px; /* Espacio para que el header fijo no tape el contenido */
+            padding-bottom: 50px;
+        }
+
+        /* GALERÍA - Usando CSS Grid para una presentación moderna */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive por defecto */
+            gap: 20px;
+            padding: 20px 5%;
+        }
+
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px; /* Bordes suaves */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.03); /* Efecto de zoom sutil al pasar el mouse */
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 300px; /* Altura fija para uniformidad */
+            object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+            display: block;
+        }
+
+        /* CAPTION (Título/Descripción sobre la imagen) */
+        .galeria-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.75); /* Fondo semitransparente oscuro */
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .galeria-item:hover .galeria-caption {
+            transform: translateY(0); /* Muestra el texto al hacer hover */
+        }
+        
+        .galeria-caption h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+            color: #FF6F00; /* Título en color de acento */
+        }
+        
+        /* FOOTER y WhatsApp float styles (simulados en style.css) */
+        /* Recomendación: Mejorar el footer para que tenga 3 columnas (Enlaces, Contacto, Logo/Misión) */
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 999;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="imagenes/LOGO7.PNG.jpg" alt="Logo Trasporte Risco" class="logo">
+    </a>
+    
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="Servicios.html">Servicios</a>
+        <a href="galeria.html" class="activo">Galería / Proyectos</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2 style="text-align: center; color: #333; margin-top: 50px;">Galería de Proyectos Recientes</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 40px;">Testimonios visuales de nuestro trabajo de eliminación de desmonte y mudanzas en Lima.</p>
+        
+        <div class="galeria-grid">
+            
+            <div class="galeria-item">
+                <img src="imagenes/f1.png.jpg" alt="Eliminación de desmonte de sótano">
+                <div class="galeria-caption">
+                    <h3>Proyecto San Isidro (Sótanos)</h3>
+                    <p>Retiro de material excedente y desmonte de sótanos de 200m² en tiempo récord.</p>
+                </div>
+            </div>
+            
+            <div class="galeria-item">
+                <img src="imagenes/f2.png.jpg" alt="Desmonte embolsado en Surco">
+                <div class="galeria-caption">
+                    <h3>Retiro Embolsado Surco</h3>
+                    <p>Carga y disposición final de 15m³ de desmonte embolsado, con certificado de escombrera.</p>
+                </div>
+            </div>
+            
+            <div class="galeria-item">
+                <img src="imagenes/f3.png.jpg" alt="Limpieza de maleza en terreno">
+                <div class="galeria-caption">
+                    <h3>Limpieza de Malezas Lince</h3>
+                    <p>Preparación de terreno y limpieza profunda para nueva construcción en Lince.</p>
+                </div>
+            </div>
+            
+            <div class="galeria-item">
+                <img src="imagenes/mudanza.png.jpg" alt="Servicio de Mudanza">
+                <div class="galeria-caption">
+                    <h3>Mudanza General Miraflores</h3>
+                    <p>Traslado seguro de oficinas y mobiliario. Nuestro servicio adicional de mudanzas.</p>
+                </div>
+            </div>
+            <div class="galeria-item">
+    <img src="imagenes/mueble.jpg" alt="Protección de muebles con mantas y film">
+    <div class="galeria-caption">
+        <h3>Acolchado y Protección Total</h3>
+        <p>Expertos en protección de muebles y enseres delicados con mantas especiales y film stretch.</p>
+    </div>
+</div>
+
+<div class="galeria-item">
+    <img src="imagenes/limpio.png.jpg" alt="Camión de mudanza limpio y moderno">
+    <div class="galeria-caption">
+        <h3>Nuestra Flota de Transporte</h3>
+        <p>Vehículos modernos y equipados para mudanzas grandes y pequeñas en todos los distritos de Lima.</p>
+    </div>
+</div>
+
+
+
+<div class="galeria-item">
+    <img src="imagenes/lista.png.jpg" alt="Personal revisando listas de chequeo de mudanza">
+    <div class="galeria-caption">
+        <h3>Logística y Planificación Detallada</h3>
+        <p>Organizamos cada paso de su mudanza para garantizar eficiencia y cero estrés.</p>
+    </div>
+</div>
+
+<div class="galeria-item">
+    <img src="imagenes/libreria.png.jpg" alt="Cajas de archivos etiquetadas">
+    <div class="galeria-caption">
+        <h3>Traslado de Archivos y Librerías</h3>
+        <p>Servicio especializado para el embalaje y traslado ordenado de archivos y documentos de oficina.</p>
+    </div>
+</div>
+            </div>
+    </section>
+</main>
+
+<footer style="background: #222; color: white; padding: 30px 5%; text-align: center;">
+    <div class="footer-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; max-width: 1200px; margin: 0 auto;">
+        <div>
+            <h4>Enlaces Rápidos</h4>
+            <a href="Servicios.html" style="color: #FF6F00; display: block;">Nuestros Servicios</a>
+            <a href="contacto.html" style="color: #FF6F00; display: block;">Solicitar Cotización</a>
+        </div>
+        <div>
+            <h4>Contacto</h4>
+            <p>Teléfono: 961 005 923</p>
+            <p>Email: contacto@transporterisco.com</p>
+        </div>
+        <div>
+            <p style="font-size: 0.9em;">**TRASPORTE RISCO**<br>&copy; 2025. Todos los derechos reservados.</p>
+        </div>
+        <div class="galeria-item">
+    <img src="imagenes/provincia.png.jpg" alt="Mudanza a Provincia, Traslado de larga distancia">
+    <div class="galeria-caption">
+        <h3>Mudanzas Nacionales (a Provincia)</h3>
+        <p>Servicio de flete y mudanza de larga distancia a cualquier departamento del Perú. Logística asegurada.</p>
+    </div>
+</div>
+    </div>
+</footer>
+
+<a href="https://wa.me/51961005923" class="whatsapp-float" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.3); z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 35px; height: 35px;">
+</a>
+
+</body>
+</html>

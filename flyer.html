@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flyer Digital - Transporte Risco - Eliminación de Desmontes">
+  <title>Flyer - Transporte Risco</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* CONTENEDOR PRINCIPAL - FLYER */
+    .flyer-container {
+      width: 100%;
+      max-width: 1920px;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #001a4d 0%, #003d99 50%, #001a4d 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 80px;
+    }
+
+    /* FONDO DIFUMINADO (OBRA/ESCOMBROS) */
+    .flyer-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(rgba(0, 26, 77, 0.7), rgba(0, 61, 153, 0.7)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" /></filter></defs><rect width="1920" height="1080" fill="url(%23grad)"/><filter id="grad"><feGaussianBlur in="SourceGraphic" stdDeviation="15" /></filter></svg>');
+      background-size: cover;
+      background-position: center;
+      filter: blur(12px) brightness(0.85);
+      z-index: 0;
+    }
+
+    /* CONTENIDO DENTRO DEL FLYER */
+    .flyer-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    /* ===== SECCIÓN SUPERIOR: LOGO Y TÍTULOS ===== */
+    .header-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .company-name {
+      font-size: clamp(48px, 5vw, 72px);
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-title {
+      font-size: clamp(42px, 4.5vw, 64px);
+      font-weight: 900;
+      color: #FF9900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      margin-top: 10px;
+    }
+
+    /* ===== SECCIÓN MEDIA: DOS COLUMNAS ===== */
+    .middle-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      width: 100%;
+      margin: 40px 0;
+      align-items: start;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .column-title {
+      font-size: clamp(24px, 2.5vw, 36px);
+      font-weight: 700;
+      color: #FF9900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .column-content {
+      font-size: clamp(16px, 1.8vw, 24px);
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .column-content li {
+      list-style: none;
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .column-content li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #FF9900;
+      font-size: 20px;
+    }
+
+    /* ===== SECCIÓN INFERIOR: CONTACTO (CTA) ===== */
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .contact-label {
+      font-size: clamp(18px, 2vw, 28px);
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .contact-number {
+      font-size: clamp(54px, 6vw, 80px);
+      font-weight: 900;
+      color: #FF9900;
+      letter-spacing: 3px;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .whatsapp-icon {
+      width: clamp(60px, 6vw, 90px);
+      height: clamp(60px, 6vw, 90px);
+      background: #FF9900;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: clamp(36px, 4vw, 54px);
+      color: white;
+      box-shadow: 0 8px 16px rgba(255, 153, 0, 0.4);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1200px) {
+      .flyer-container {
+        padding: 40px 60px;
+      }
+
+      .middle-section {
+        gap: 40px;
+        margin: 30px 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .flyer-container {
+        aspect-ratio: 1 / 1.2;
+        padding: 30px 40px;
+      }
+
+      .middle-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin: 20px 0;
+      }
+
+      .contact-number {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .whatsapp-icon {
+        order: -1;
+      }
+
+      .column-content li::before {
+        display: none;
+      }
+
+      .column-content li {
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .flyer-container {
+        padding: 20px 20px;
+      }
+
+      .company-name {
+        font-size: 32px;
+      }
+
+      .service-title {
+        font-size: 28px;
+      }
+
+      .column-title {
+        font-size: 18px;
+      }
+
+      .column-content {
+        font-size: 14px;
+      }
+    }
+
+    /* ===== IMPRESIÓN ===== */
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+        background: white;
+      }
+
+      .flyer-container {
+        max-width: 100%;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- FLYER DIGITAL FULL HD -->
+<div class="flyer-container">
+  <div class="flyer-content">
+
+    <!-- SECCIÓN SUPERIOR: LOGO Y TÍTULOS -->
+    <div class="header-section">
+      <h1 class="company-name">TRANSPORTE RISCO</h1>
+      <h2 class="Service-title">ELIMINACIÓN DE DESMONTES</h2>
+    </div>
+
+    <!-- SECCIÓN MEDIA: DOS COLUMNAS -->
+    <div class="middle-section">
+      <!-- COLUMNA IZQUIERDA: SERVICIOS -->
+      <div class="column">
+        <h3 class="column-title">NUESTROS SERVICIOS</h3>
+        <ul class="column-content">
+          <li>Eliminación de Desmonte Suelto y Embolsado</li>
+          <li>Limpieza de Malezas</li>
+          <li>Desmonte de Sótanos</li>
+          <li>Mudanzas en General</li>
+        </ul>
+      </div>
+
+      <!-- COLUMNA DERECHA: ZONAS -->
+      <div class="column">
+        <h3 class="column-title">ESTAMOS UBICADOS</h3>
+        <ul class="column-content">
+          <li>San Borja • Surco • Surquillo</li>
+          <li>Miraflores • San Isidro • Magdalena</li>
+          <li>San Miguel • Jesús María • Lince</li>
+          <li>San Luis • Pueblo Libre • Breña</li>
+          <li>Cercado de Lima</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECCIÓN INFERIOR: CONTACTO (CTA) -->
+    <div class="footer-section">
+      <p class="contact-label">CONTÁCTANOS POR WHATSAPP</p>
+      <div class="contact-number">
+        <div class="whatsapp-icon">W</div>
+        <span>961 005 923</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
